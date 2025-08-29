@@ -85,7 +85,12 @@
       "Read(C:\\Users\\andre.darby\\Desktop\\Dev\\QuickJPG/**)",
       "Read(C:\\Users\\andre.darby\\Desktop\\Dev\\QuickJPG\\client\\src\\config/**)",
       "Read(C:\\Users\\andre.darby\\Desktop\\Dev\\QuickJPG/**)",
-      "Bash(npm run verify:staging:*)"
+      "Bash(npm run verify:staging:*)",
+      "Bash(git rm:*)",
+      "Bash(wrangler pages project:*)",
+      "Bash(echo \"Since privyqr.com is already in Cloudflare, you need to:\n\n1. Go to https://dash.cloudflare.com\n2. Select privyqr.com domain\n3. Click on ''Pages'' in the left sidebar\n4. Click on your ''privyqr'' project\n5. Go to ''Custom domains'' tab\n6. Click ''Set up a custom domain''\n7. Enter: privyqr.com\n8. It will automatically configure the DNS\n\nOR add this DNS record manually:\n\nType: CNAME\nName: @ (root)\nContent: privyqr.pages.dev\nProxy: ON (orange cloud)\n\nThe site should work within minutes!\")",
+      "Bash(nslookup:*)",
+      "Bash(npm run verify:*)"
     ],
     "deny": [],
     "ask": []

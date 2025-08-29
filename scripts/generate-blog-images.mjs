@@ -32,8 +32,12 @@ async function generateHeroImage(prompt, blogTitle) {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-      prompt: prompt,
-      modelId: '6b645e3a-d64f-4341-a6d8-7a3690fbf042', // Leonardo Phoenix
+      prompt: prompt + ' | IMPORTANT: absolutely no text, no words, no letters, no numbers, no writing of any kind in the image',
+      negative_prompt: 'text, words, letters, numbers, writing, typography, labels, captions, titles, watermarks, signatures',
+      modelId: '6b645e3a-d64f-4341-a6d8-7a3690fbf042', // Leonardo Phoenix (best for photorealistic)
+      // Alternative models that might handle text better (if needed in future):
+      // modelId: 'e316348f-7773-490e-adcd-46757c738eb7', // Leonardo Kino XL (cinematic)
+      // modelId: 'aa77f04e-3eec-4034-9c07-d0f619684628', // Leonardo Diffusion XL
       width: 1024,
       height: 576, // 16:9 aspect ratio
       num_images: 1,
@@ -119,42 +123,42 @@ async function downloadImage(url, filename) {
 
 const blogImagePrompts = {
   'qr-code-security-guide': {
-    hero: 'Photorealistic image of digital security shield with holographic QR code patterns floating around it, blue and purple gradient lighting, cyber security theme, modern tech aesthetic, cinematic composition, high detail, no text',
+    hero: 'Photorealistic image of glowing digital security shield with holographic QR code patterns floating in cyberspace, blue and purple gradient lighting, cyber security visualization, modern tech aesthetic, cinematic composition, high detail, abstract digital art',
     filename: 'hero-qr-security.jpg'
   },
   
   'scan-qr-from-screenshot': {
-    hero: 'Photorealistic split screen showing smartphone screen with QR code on left, scanning interface on right, modern device mockup, clean tech design, blue accent lighting, professional product photography style',
+    hero: 'Photorealistic split screen composition showing smartphone with QR code pattern, scanning laser beams, modern device mockup, clean minimalist tech design, blue accent lighting, professional product photography style, no text or UI elements',
     filename: 'hero-screenshot-scan.jpg'
   },
   
   'extract-qr-from-pdf': {
-    hero: 'Photorealistic visualization of PDF document pages floating in 3D space with QR codes being extracted and highlighted, modern office environment background, professional lighting, tech innovation theme',
+    hero: 'Photorealistic visualization of paper documents floating in 3D space with QR code patterns being highlighted by light beams, modern office environment, professional lighting, tech innovation theme, abstract document processing',
     filename: 'hero-pdf-extract.jpg'
   },
   
   'wifi-qr-codes-guide': {
-    hero: 'Photorealistic modern cafe interior with elegant QR code display on table, WiFi signal visualization, warm ambient lighting, lifestyle photography style, cozy atmosphere',
+    hero: 'Photorealistic modern coffee shop interior with QR code pattern on wooden table, WiFi signal waves visualization in air, warm ambient lighting, lifestyle photography, cozy atmosphere, no text or signage',
     filename: 'hero-wifi-qr.jpg'
   },
   
   'qr-code-business-cards': {
-    hero: 'Photorealistic premium business cards with embedded QR codes, professional office desk setting, elegant minimalist design, soft studio lighting, luxury branding aesthetic',
+    hero: 'Photorealistic elegant business cards with embossed QR code patterns, professional marble desk surface, minimalist design, soft studio lighting, luxury branding aesthetic, high-end materials',
     filename: 'hero-business-cards.jpg'
   },
   
   'event-qr-codes': {
-    hero: 'Photorealistic concert venue entrance with digital QR code ticket scanning, crowd atmosphere, dynamic lighting, event excitement, modern technology integration',
+    hero: 'Photorealistic concert venue entrance with scanning light beams and QR code projections, crowd silhouettes, dynamic colored lighting, event excitement atmosphere, modern technology integration',
     filename: 'hero-event-qr.jpg'
   },
   
   'restaurant-menu-qr-codes': {
-    hero: 'Photorealistic upscale restaurant table setting with elegant QR code menu display, ambient restaurant lighting, fine dining atmosphere, modern hospitality tech',
+    hero: 'Photorealistic elegant restaurant table with QR code stand, wine glasses, ambient candlelight, fine dining atmosphere, bokeh background, upscale hospitality setting',
     filename: 'hero-restaurant-menu.jpg'
   },
   
   'qr-codes-in-education': {
-    hero: 'Photorealistic modern classroom with interactive QR codes on smart board, students with tablets, bright educational environment, technology in learning theme',
+    hero: 'Photorealistic modern classroom with QR code patterns projected on wall, students with tablets, bright natural lighting, colorful educational environment, technology in learning visualization',
     filename: 'hero-education-qr.jpg'
   }
 };

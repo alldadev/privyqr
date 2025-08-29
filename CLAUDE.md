@@ -159,6 +159,23 @@ npm run build && wrangler pages deploy dist --project-name=privyqr --branch=main
 
 **NEVER publish a blog post without adding it to the blog listing page!**
 
+## 🖼️ Hero Image Generation Rules
+
+When generating hero images with Leonardo.ai:
+1. **NEVER INCLUDE TEXT** - Leonardo.ai garbles text badly. Use only visual elements
+2. Add negative prompts: "text, words, letters, numbers, writing, typography, labels"
+3. Use photorealistic style for professional appearance
+4. Maintain 16:9 aspect ratio (1024x576)
+5. Include relevant QR code visual elements (patterns, not readable codes)
+6. Keep consistent lighting and quality across all images
+7. Use cinematic composition for visual appeal
+8. Focus on abstract representations and symbolic imagery
+
+**Model Options**:
+- Leonardo Phoenix (current): Best for photorealistic, no text
+- Leonardo Kino XL: Alternative for cinematic style
+- Leonardo Diffusion XL: Alternative for artistic style
+
 ## Performance Considerations
 
 - Lazy load PDF.js only when needed
