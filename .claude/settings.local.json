@@ -19,7 +19,10 @@
       "Bash(git push:*)",
       "Bash(wrangler pages deploy:*)",
       "Read(C:\\Users\\andre.darby\\Desktop\\Dev\\QuickJPG/**)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(wrangler pages project create:*)",
+      "Bash(curl:*)",
+      "Read(C:\\Users\\andre.darby\\Desktop\\Dev\\QuickJPG/**)"
     ],
     "deny": [],
     "ask": []
