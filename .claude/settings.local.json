@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Read(C:\\Users\\andre.darby\\Desktop\\Dev\\QuickJPG/**)",
+      "Read(C:\\Users\\andre.darby\\Desktop\\Dev\\QuickJPG/**)",
+      "Read(C:\\Users\\andre.darby\\Desktop\\Dev\\QuickJPG\\client/**)",
+      "Read(C:\\Users\\andre.darby\\Desktop\\Dev\\QuickJPG\\client\\src/**)",
+      "Read(C:\\Users\\andre.darby\\Desktop\\Dev\\QuickJPG\\client\\src\\components/**)",
+      "Read(C:\\Users\\andre.darby\\Desktop\\Dev\\QuickJPG/**)",
+      "Bash(npm install)",
+      "Bash(npm install:*)",
+      "Bash(npx vite:*)",
+      "Read(C:\\Users\\andre.darby\\Desktop\\Dev\\QuickJPG/**)",
+      "Read(C:\\Users\\andre.darby\\Desktop\\Dev\\QuickJPG\\client\\src\\pages/**)",
+      "Bash(git init:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
