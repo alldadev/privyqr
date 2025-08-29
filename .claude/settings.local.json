@@ -22,7 +22,13 @@
       "Bash(git add:*)",
       "Bash(wrangler pages project create:*)",
       "Bash(curl:*)",
-      "Read(C:\\Users\\andre.darby\\Desktop\\Dev\\QuickJPG/**)"
+      "Read(C:\\Users\\andre.darby\\Desktop\\Dev\\QuickJPG/**)",
+      "Read(C:\\Users\\andre.darby\\Desktop\\Dev\\QuickJPG/**)",
+      "Read(C:\\Users\\andre.darby\\Desktop\\Dev\\QuickJPG\\scripts/**)",
+      "Read(C:\\Users\\andre.darby\\Desktop\\Dev\\QuickJPG/**)",
+      "Read(C:\\Users\\andre.darby\\Desktop\\Dev\\QuickJPG\\client/**)",
+      "Read(C:\\Users\\andre.darby\\Desktop\\Dev\\QuickJPG\\dist\\public/**)",
+      "Read(C:\\Users\\andre.darby\\Desktop/**)"
     ],
     "deny": [],
     "ask": []

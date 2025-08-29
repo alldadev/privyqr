@@ -28,6 +28,49 @@ node deploy-safe.cjs
 - **IMMEDIATE ROLLBACK**: `npm run build && wrangler pages deploy dist --project-name=privyqr --branch=main`
 - **Verify restoration**: `curl -I https://privyqr.com`
 
+## 🔥 CRITICAL BUG FIXES AND LESSONS LEARNED
+
+### HTML Rendering Issue (2025-08-28)
+**Problem**: Site showed raw HTML text instead of rendered page (blank page or broken display)
+**Root Cause**: Using Tailwind CDN incorrectly or deploying source files instead of built files
+**Permanent Fix**: 
+1. **ALWAYS use inline styles for emergency fixes** - Never rely on external CDN for critical deployments
+2. **Create standalone HTML with all CSS inline** when npm build fails
+3. **Test locally first**: Open index.html directly in browser before deploying
+4. **Proper file structure in dist/**:
+   - index.html (with inline styles or proper build)
+   - _headers (security headers)
+   - _redirects (URL redirects)
+   - favicon.svg
+   - robots.txt
+   - sitemap.xml
+
+**Emergency Recovery HTML Template**:
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PrivyQR - Scan QR Codes Privately</title>
+    <style>
+        /* ALL STYLES MUST BE INLINE - NO EXTERNAL DEPENDENCIES */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: system-ui, -apple-system, sans-serif; }
+        /* Full styles inline... */
+    </style>
+</head>
+<body>
+    <!-- HTML content with inline styles only -->
+</body>
+</html>
+```
+
+**Verification Steps**:
+1. Check live site: `curl https://privyqr.pages.dev/` (should see HTML, not raw text)
+2. Check headers: `curl -I https://privyqr.pages.dev/` (should return 200 OK)
+3. Visual check: Open in browser, should see styled page, not raw HTML
+
 ## Project Overview
 
 PrivyQR - A privacy-first, in-browser QR code scanner and decoder. All QR decoding runs client-side with no server uploads, following the same architectural simplicity and privacy principles as QuickJPG.
