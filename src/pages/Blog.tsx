@@ -2,6 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'wouter';
 import { Calendar, ArrowRight, Shield, Smartphone, FileText, Zap } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import Layout from '@/components/Layout';
 
 const blogPosts = [
   {
@@ -98,37 +99,12 @@ const blogPosts = [
 
 export default function Blog() {
   return (
-    <>
+    <Layout>
       <Helmet>
         <title>QR Code Blog - Tips, Security & Guides | PrivyQR</title>
         <meta name="description" content="Learn about QR code security, scanning tips, and best practices. Expert guides on WiFi QR codes, vCards, PDF scanning, and privacy-focused solutions." />
         <link rel="canonical" href="https://privyqr.com/blog" />
       </Helmet>
-
-      <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
-        {/* Header */}
-        <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-          <div className="container mx-auto px-4 py-4">
-            <div className="flex items-center justify-between">
-              <Link href="/">
-                <a className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                  <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                    <FileText className="w-6 h-6 text-primary-foreground" />
-                  </div>
-                  <span className="text-2xl font-bold gradient-text">PrivyQR</span>
-                </a>
-              </Link>
-              <nav className="hidden md:flex items-center gap-6">
-                <Link href="/">
-                  <a className="text-sm hover:text-primary transition-colors">Home</a>
-                </Link>
-                <Link href="/blog">
-                  <a className="text-sm text-primary font-medium">Blog</a>
-                </Link>
-              </nav>
-            </div>
-          </div>
-        </header>
 
         {/* Hero Section */}
         <section className="container mx-auto px-4 py-12">
@@ -248,33 +224,6 @@ export default function Blog() {
             </p>
           </div>
         </section>
-
-        {/* Footer */}
-        <footer className="border-t bg-muted/50">
-          <div className="container mx-auto px-4 py-8">
-            <div className="text-center text-sm text-muted-foreground">
-              <p>© 2024 PrivyQR. All QR code scanning happens in your browser.</p>
-              <p className="mt-2">
-                <Link href="/">
-                  <a className="hover:text-primary">Home</a>
-                </Link>
-                {' • '}
-                <Link href="/blog">
-                  <a className="hover:text-primary">Blog</a>
-                </Link>
-                {' • '}
-                <Link href="/scan-from-image">
-                  <a className="hover:text-primary">Scan from Image</a>
-                </Link>
-                {' • '}
-                <Link href="/scan-from-pdf">
-                  <a className="hover:text-primary">PDF Scanner</a>
-                </Link>
-              </p>
-            </div>
-          </div>
-        </footer>
-      </div>
-    </>
+    </Layout>
   );
 }

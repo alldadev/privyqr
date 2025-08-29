@@ -1,4 +1,54 @@
+# PrivyQR Robots.txt
+# Allow all crawlers full access to scan and index our content
+
 User-agent: *
 Allow: /
+Crawl-delay: 1
 
+# Google - Priority crawler
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Google Images
+User-agent: Googlebot-Image
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+# Yandex
+User-agent: Yandex
+Allow: /
+
+# Important pages for crawlers - SEO priority
+Allow: /scan-from-image
+Allow: /scan-from-screenshot
+Allow: /scan-from-pdf
+Allow: /private-qr-scanner
+Allow: /browser-qr-scanner
+Allow: /no-upload-qr-scanner
+Allow: /blog/
+Allow: /faq
+Allow: /about
+Allow: /contact
+
+# Block any potential admin/test pages
+Disallow: /admin/
+Disallow: /test/
+Disallow: /.git/
+Disallow: /api/
+Disallow: *.json$
+
+# Sitemap locations
 Sitemap: https://privyqr.com/sitemap.xml
+Sitemap: https://privyqr.pages.dev/sitemap.xml
+
+# Host directive (for Yandex)
+Host: https://privyqr.com

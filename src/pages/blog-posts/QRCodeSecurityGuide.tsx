@@ -2,10 +2,11 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'wouter';
 import { Shield, AlertTriangle, CheckCircle, ArrowLeft, ExternalLink } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
+import Layout from '@/components/Layout';
 
 export default function QRCodeSecurityGuide() {
   return (
-    <>
+    <Layout>
       <Helmet>
         <title>QR Code Security: What You Need to Know in 2025 | PrivyQR</title>
         <meta name="description" content="Understanding QR code security risks and how to protect yourself from malicious codes. Learn about URL shorteners, phishing attempts, and safe scanning practices." />
@@ -13,31 +14,6 @@ export default function QRCodeSecurityGuide() {
         <meta property="og:title" content="QR Code Security: What You Need to Know in 2025" />
         <meta property="og:description" content="Complete guide to QR code security, malicious code detection, and safe scanning practices." />
       </Helmet>
-
-      <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
-        {/* Header */}
-        <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-          <div className="container mx-auto px-4 py-4">
-            <div className="flex items-center justify-between">
-              <Link href="/">
-                <a className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                  <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                    <Shield className="w-6 h-6 text-primary-foreground" />
-                  </div>
-                  <span className="text-2xl font-bold gradient-text">PrivyQR</span>
-                </a>
-              </Link>
-              <nav className="hidden md:flex items-center gap-6">
-                <Link href="/blog">
-                  <a className="text-sm hover:text-primary transition-colors">
-                    <ArrowLeft className="w-4 h-4 inline mr-1" />
-                    Back to Blog
-                  </a>
-                </Link>
-              </nav>
-            </div>
-          </div>
-        </header>
 
         {/* Article */}
         <article className="container mx-auto px-4 py-12 max-w-4xl">
@@ -222,7 +198,6 @@ export default function QRCodeSecurityGuide() {
             </CardContent>
           </Card>
         </article>
-      </div>
-    </>
+    </Layout>
   );
 }

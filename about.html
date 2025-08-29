@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About PrivyQR - Privacy-First QR Code Scanner</title>
+    <meta name="description" content="Learn about PrivyQR's mission to provide secure, private QR code scanning. 100% client-side processing, no data collection.">
+    <link rel="canonical" href="https://privyqr.com/about">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(to bottom, #ffffff, #f3e8ff);
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: #8b5cf6;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        nav { display: flex; gap: 24px; }
+        nav a {
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: #8b5cf6; }
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            font-size: 1.25rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .section {
+            background: white;
+            padding: 4rem 0;
+            margin: 2rem 0;
+            border-radius: 12px;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .value-card {
+            text-align: center;
+            padding: 2rem;
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+        .value-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        footer {
+            background: #1f2937;
+            color: white;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #8b5cf6;
+        }
+        .footer-section a {
+            color: #9ca3af;
+            text-decoration: none;
+            display: block;
+            padding: 0.25rem 0;
+            transition: color 0.3s;
+        }
+        .footer-section a:hover { color: white; }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #374151;
+            color: #9ca3af;
+        }
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="/" class="logo">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7"/>
+                            <rect x="14" y="3" width="7" height="7"/>
+                            <rect x="3" y="14" width="7" height="7"/>
+                            <rect x="16" y="16" width="3" height="3"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">PrivyQR</div>
+                </a>
+                <nav>
+                    <a href="/">Home</a>
+                    <a href="/about">About</a>
+                    <a href="/faq">FAQ</a>
+                    <a href="/blog">Blog</a>
+                    <a href="/contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>About PrivyQR</h1>
+            <p class="subtitle">Your privacy is not just a feature, it's our foundation.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2>Our Mission</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto; font-size: 1.1rem; color: #666;">
+                In a world where data privacy is increasingly rare, PrivyQR stands as a beacon of digital autonomy. 
+                We believe that scanning a QR code shouldn't mean sacrificing your privacy. That's why we built a 
+                QR scanner that processes everything locally in your browser - no uploads, no tracking, no compromises.
+            </p>
+
+            <div class="stats">
+                <div class="stat">
+                    <div class="stat-number">0</div>
+                    <p>Data Collected</p>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100%</div>
+                    <p>Client-Side Processing</p>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">∞</div>
+                    <p>Privacy Guaranteed</p>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">24/7</div>
+                    <p>Always Available</p>
+                </div>
+            </div>
+
+            <h2>Our Values</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">🔒</div>
+                    <h3>Privacy First</h3>
+                    <p>Your data never leaves your device. All QR processing happens locally in your browser.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">⚡</div>
+                    <h3>Lightning Fast</h3>
+                    <p>No server round-trips mean instant results. Scan and decode in milliseconds.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">🌍</div>
+                    <h3>Universally Accessible</h3>
+                    <p>Works on any device with a modern browser. No app downloads required.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">💎</div>
+                    <h3>Forever Free</h3>
+                    <p>Core features will always be free. No hidden costs or premium gatekeeping.</p>
+                </div>
+            </div>
+
+            <h2 style="margin-top: 3rem;">The Technology</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; color: #666;">
+                PrivyQR leverages cutting-edge web technologies to deliver a secure, private scanning experience:
+            </p>
+            <div style="max-width: 600px; margin: 0 auto;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb;">
+                        <strong>WebAssembly:</strong> High-performance QR decoding in your browser
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb;">
+                        <strong>Web Workers:</strong> Background processing without UI freezing
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb;">
+                        <strong>FileReader API:</strong> Direct file access without uploads
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb;">
+                        <strong>MediaDevices API:</strong> Secure camera access for live scanning
+                    </li>
+                    <li style="padding: 0.5rem 0;">
+                        <strong>PDF.js:</strong> Client-side PDF processing for embedded QR codes
+                    </li>
+                </ul>
+            </div>
+
+            <h2 style="margin-top: 3rem;">Contact Us</h2>
+            <p style="text-align: center; max-width: 600px; margin: 0 auto;">
+                Have questions, suggestions, or just want to say hello? We'd love to hear from you!<br><br>
+                <a href="/contact" style="display: inline-block; padding: 0.75rem 2rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 8px;">Get in Touch</a>
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Product</h3>
+                    <a href="/">QR Scanner</a>
+                    <a href="/features">Features</a>
+                    <a href="/pricing">Pricing</a>
+                    <a href="/api">API</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <a href="/about">About</a>
+                    <a href="/blog">Blog</a>
+                    <a href="/careers">Careers</a>
+                    <a href="/press">Press Kit</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <a href="/faq">FAQ</a>
+                    <a href="/contact">Contact</a>
+                    <a href="/help">Help Center</a>
+                    <a href="/status">System Status</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <a href="/privacy">Privacy Policy</a>
+                    <a href="/terms">Terms of Service</a>
+                    <a href="/cookies">Cookie Policy</a>
+                    <a href="/gdpr">GDPR</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 PrivyQR. All rights reserved. Made with ❤️ for privacy.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
