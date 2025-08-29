@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet-async';
 import { Link } from 'wouter';
-import { Calendar, ArrowRight, Shield, Smartphone, FileText, Zap } from 'lucide-react';
+import { Calendar, ArrowRight, Shield, Smartphone, FileText, Wifi, Briefcase, Ticket, UtensilsCrossed, GraduationCap } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Layout from '@/components/Layout';
 
@@ -9,13 +9,49 @@ const blogPosts = [
     id: 1,
     title: "QR Code Security: What You Need to Know in 2025",
     excerpt: "Understanding QR code security risks and how to protect yourself from malicious codes. Learn about URL shorteners, phishing attempts, and safe scanning practices.",
-    date: "2025-01-15",
+    date: "2025-01-20",
     slug: "qr-code-security-guide",
     icon: Shield,
     category: "Security"
   },
   {
     id: 2,
+    title: "QR Codes in Education: Transforming Modern Learning",
+    excerpt: "Revolutionize education with QR codes. Create interactive lessons, streamline attendance, share resources instantly, and engage students.",
+    date: "2025-01-18",
+    slug: "qr-codes-in-education",
+    icon: GraduationCap,
+    category: "Education"
+  },
+  {
+    id: 3,
+    title: "Restaurant QR Code Menus: Complete Implementation Guide",
+    excerpt: "Transform your restaurant with QR code menus. Reduce costs, update instantly, track popular items, and improve safety.",
+    date: "2025-01-17",
+    slug: "restaurant-menu-qr-codes",
+    icon: UtensilsCrossed,
+    category: "Restaurant"
+  },
+  {
+    id: 4,
+    title: "Event QR Codes: Streamline Check-ins and Boost Engagement",
+    excerpt: "Transform event management with QR codes. Speed up check-ins, track attendance, engage attendees, and gather insights.",
+    date: "2025-01-16",
+    slug: "event-qr-codes",
+    icon: Ticket,
+    category: "Events"
+  },
+  {
+    id: 5,
+    title: "Digital Business Cards with QR Codes: The Complete Guide",
+    excerpt: "Transform networking with QR code business cards. Share contact info instantly, track connections, and go paperless.",
+    date: "2025-01-15",
+    slug: "qr-code-business-cards",
+    icon: Briefcase,
+    category: "Professional"
+  },
+  {
+    id: 6,
     title: "How to Scan QR Codes from Screenshots on Any Device",
     excerpt: "Complete guide to scanning QR codes from screenshots on iPhone, Android, Windows, and Mac. No apps needed - use PrivyQR directly in your browser.",
     date: "2025-01-12",
@@ -24,7 +60,7 @@ const blogPosts = [
     category: "Tutorial"
   },
   {
-    id: 3,
+    id: 7,
     title: "Extract QR Codes from PDF Documents: Complete Guide",
     excerpt: "Learn how to scan multiple QR codes from PDF files, including multi-page documents. Perfect for tickets, invoices, and digital documents.",
     date: "2025-01-10",
@@ -33,67 +69,13 @@ const blogPosts = [
     category: "Tutorial"
   },
   {
-    id: 4,
+    id: 8,
     title: "WiFi QR Codes: Share Your Network Securely",
     excerpt: "How to create and scan WiFi QR codes. Share your network password securely without typing. Works with WPA, WPA2, and hidden networks.",
     date: "2025-01-08",
     slug: "wifi-qr-codes-guide",
-    icon: Zap,
+    icon: Wifi,
     category: "How-To"
-  },
-  {
-    id: 5,
-    title: "QR Codes vs Barcodes: Understanding the Difference",
-    excerpt: "Detailed comparison of QR codes and traditional barcodes. Learn about capacity, error correction, and use cases for each format.",
-    date: "2025-01-05",
-    slug: "qr-codes-vs-barcodes",
-    icon: Shield,
-    category: "Education"
-  },
-  {
-    id: 6,
-    title: "Privacy-First QR Scanning: Why It Matters",
-    excerpt: "Discover why browser-based QR scanning protects your privacy better than apps. No permissions, no tracking, no data collection.",
-    date: "2025-01-03",
-    slug: "privacy-first-qr-scanning",
-    icon: Shield,
-    category: "Privacy"
-  },
-  {
-    id: 7,
-    title: "Business Card QR Codes: The Complete vCard Guide",
-    excerpt: "How to create and scan vCard QR codes for instant contact sharing. Perfect for networking events and digital business cards.",
-    date: "2024-12-28",
-    slug: "vcard-qr-codes-guide",
-    icon: Smartphone,
-    category: "Business"
-  },
-  {
-    id: 8,
-    title: "QR Code Best Practices for Businesses",
-    excerpt: "Essential tips for businesses using QR codes. Learn about sizing, placement, testing, and tracking for maximum engagement.",
-    date: "2024-12-25",
-    slug: "qr-code-business-best-practices",
-    icon: Zap,
-    category: "Business"
-  },
-  {
-    id: 9,
-    title: "How to Verify Suspicious QR Codes Before Scanning",
-    excerpt: "Learn how to identify potentially malicious QR codes and verify URLs before visiting them. Essential security tips for safe scanning.",
-    date: "2024-12-22",
-    slug: "verify-suspicious-qr-codes",
-    icon: Shield,
-    category: "Security"
-  },
-  {
-    id: 10,
-    title: "The History and Future of QR Codes",
-    excerpt: "From Japanese automotive parts to global adoption - the fascinating evolution of QR codes and what's coming next.",
-    date: "2024-12-20",
-    slug: "history-future-qr-codes",
-    icon: FileText,
-    category: "Education"
   }
 ];
 

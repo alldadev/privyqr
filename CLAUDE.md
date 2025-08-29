@@ -193,3 +193,60 @@ After any deployment:
    - Missing resources (404s)
    - Core functionality (can users scan QR codes?)
 4. If ANY issues found, immediately rollback
+
+## 🎨 Blog Hero Images with Leonardo.ai
+
+### Leonardo.ai Configuration:
+- **API Key**: `ef6d0af2-e738-4aff-b735-3a1dd493891c`
+- **Model**: Leonardo Phoenix (`6b645e3a-d64f-4341-a6d8-7a3690fbf042`)
+- **Settings**: 1024x576, CINEMATIC preset, no prompt magic/alchemy
+
+### Hero Image Requirements:
+- **Size**: 1024x576 (16:9 aspect ratio)
+- **Format**: JPG for optimal loading
+- **Location**: `/public/blog-images/`
+- **Naming**: `hero-[blog-slug].jpg`
+
+### CRITICAL Hero Image Rules:
+1. **VARIETY IS KEY**: Don't use same theme repeatedly (e.g., ALL desktop computers)
+2. **MIX IT UP**: Use diverse concepts - abstract art, nature metaphors, scientific visualizations
+3. **PHOTOREALISTIC**: All hero images should be photorealistic, not cartoonish
+4. **NO TEXT IN IMAGES**: Avoid text in images as AI often misspells
+5. **QR CODE THEME**: Include QR code elements where relevant
+
+### Blog Post Hero Image Template:
+```tsx
+{/* Hero Image */}
+<div className="mb-8 animate-on-scroll">
+  <img 
+    src="/blog-images/hero-[blog-slug].jpg" 
+    alt="[Detailed photorealistic description]" 
+    className="w-full rounded-lg shadow-lg"
+    loading="eager"
+  />
+</div>
+```
+
+### Prompt Templates for PrivyQR:
+```javascript
+// QR Security Theme
+`Photorealistic image of digital security shield with QR code patterns, 
+blue and purple gradient lighting, modern tech aesthetic, 
+cinematic composition, high detail`
+
+// QR Business Theme  
+`Professional business setting with QR codes integrated naturally,
+modern office environment, clean minimalist design,
+photorealistic lighting, 1024x576`
+
+// QR Technology Theme
+`Abstract technological visualization of QR code data streams,
+purple and blue color scheme, futuristic aesthetic,
+photorealistic 3D rendering, cinematic quality`
+```
+
+### Deployment with Images:
+When deploying with new hero images:
+```bash
+npm run build && cp -r public/blog-images dist/ && wrangler pages deploy dist --project-name=privyqr --branch=main
+```

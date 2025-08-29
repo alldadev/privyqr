@@ -17,6 +17,14 @@ export default function QRCodeSecurityGuide() {
 
         {/* Article */}
         <article className="container mx-auto px-4 py-12 max-w-4xl">
+          {/* Hero Image */}
+          <img 
+            src="/blog-images/hero-qr-security.jpg" 
+            alt="QR Code Security - Digital security shield protecting QR code scanning"
+            className="w-full h-auto rounded-lg shadow-lg mb-8"
+            loading="lazy"
+          />
+          
           {/* Hero */}
           <div className="mb-8">
             <div className="flex items-center gap-2 text-primary mb-4">

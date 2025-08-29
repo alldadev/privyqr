@@ -8,7 +8,14 @@
     "build": "vite build",
     "preview": "vite preview",
     "check": "tsc --noEmit",
-    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
+    "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "deploy": "node deploy-safe.cjs",
+    "deploy:quick": "npm run build && wrangler pages deploy dist --project-name=privyqr --branch=main",
+    "index": "node submit-indexnow.js",
+    "index:google": "node scripts/google-indexing-api.mjs",
+    "verify": "node verify-deployment.js",
+    "verify:staging": "node verify-deployment.js --staging",
+    "generate:images": "node scripts/generate-blog-images.mjs"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "^1.1.7",
@@ -24,8 +31,10 @@
     "@zxing/library": "^0.21.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "googleapis": "^159.0.0",
     "jsqr": "^1.4.0",
     "lucide-react": "^0.453.0",
+    "node-fetch": "^3.3.2",
     "pdfjs-dist": "^4.8.69",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
