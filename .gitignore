@@ -47,3 +47,13 @@ dist-ssr
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Sensitive files - NEVER commit these
+scripts/google-credentials.json
+ga-key.json
+scripts/indexing-history.json
+scripts/indexing-results.json
+*.pem
+*.key
+*.crt
+*.pfx
