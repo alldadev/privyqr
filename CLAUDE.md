@@ -2,6 +2,32 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## 🚨 CRITICAL: PRODUCTION DEPLOYMENT RULES
+**THIS SITE IS LIVE - ZERO TOLERANCE FOR DOWNTIME**
+
+### ✅ ALWAYS USE THE SAFE DEPLOYMENT SCRIPTS:
+```bash
+# PREFERRED METHOD:
+npm run deploy
+
+# Alternative:
+node deploy-safe.cjs
+```
+
+**NEVER deploy manually without these scripts!**
+
+### MANDATORY BEFORE ANY DEPLOYMENT:
+1. **Build locally first**: `npm run build`
+2. **Verify build output**: Check dist/ folder (MUST see index.html, assets/, robots.txt, sitemap.xml)
+3. **Deploy to staging first**: `wrangler pages deploy dist --project-name=privyqr --branch=staging`
+4. **Test staging URL**: Wait 30 seconds, verify it loads
+5. **Deploy to production**: `wrangler pages deploy dist --project-name=privyqr --branch=main`
+6. **VERIFY IMMEDIATELY**: `curl -I https://privyqr.com` (MUST return HTTP 200)
+
+### IF SITE GOES DOWN:
+- **IMMEDIATE ROLLBACK**: `npm run build && wrangler pages deploy dist --project-name=privyqr --branch=main`
+- **Verify restoration**: `curl -I https://privyqr.com`
+
 ## Project Overview
 
 PrivyQR - A privacy-first, in-browser QR code scanner and decoder. All QR decoding runs client-side with no server uploads, following the same architectural simplicity and privacy principles as QuickJPG.
@@ -69,11 +95,26 @@ npm run lint
 
 ## Deployment
 
-Deploy to Cloudflare Pages:
+### DEPLOYMENT COMMAND (COPY THIS EXACTLY):
 ```bash
-npm run build
-# Upload dist/ folder to Cloudflare Pages
+npm run build && wrangler pages deploy dist --project-name=privyqr --branch=main && sleep 30 && curl -I https://privyqr.com
 ```
+
+### Cloudflare Pages Configuration:
+- **Build command**: `npm run build`
+- **Build output directory**: `dist`
+- **Node version**: `18`
+- **Project name**: `privyqr`
+
+## ⚠️ CRITICAL: Blog Publishing Checklist
+**MANDATORY when publishing new blog posts:**
+1. Create the blog post file in `src/pages/blog-posts/`
+2. Add route in `src/App.tsx`
+3. **ADD TO BLOG LISTING PAGE**: Update `src/pages/Blog.tsx` with the new post
+4. Add URL to `public/sitemap.xml`
+5. Run deployment
+
+**NEVER publish a blog post without adding it to the blog listing page!**
 
 ## Performance Considerations
 
@@ -81,3 +122,31 @@ npm run build
 - Use Web Workers for heavy QR processing
 - Implement service worker for offline support
 - Bundle splitting for optimal loading
+- All QR processing happens client-side (privacy-first)
+
+## Critical Production Files
+Always verify these files exist in deployments:
+- **robots.txt**: For search engine crawling
+- **sitemap.xml**: For SEO
+- **_headers**: Cloudflare security headers
+- **_redirects**: URL routing rules
+- **favicon.svg**: Brand identity
+
+NEVER deploy without these files!
+
+## Emergency Response Protocol
+When critical production failure occurs:
+1. IMMEDIATELY deploy last known working version
+2. Include ALL critical files (robots.txt, sitemap.xml, etc.)
+3. Use standalone HTML with inline JavaScript if necessary
+4. Fix root cause AFTER service is restored
+
+## Deployment Verification
+After any deployment:
+1. ALWAYS wait 30 seconds for propagation
+2. Test the deployed URL in a browser
+3. Check for:
+   - Console errors
+   - Missing resources (404s)
+   - Core functionality (can users scan QR codes?)
+4. If ANY issues found, immediately rollback

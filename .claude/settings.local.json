@@ -13,7 +13,13 @@
       "Bash(npx vite:*)",
       "Read(C:\\Users\\andre.darby\\Desktop\\Dev\\QuickJPG/**)",
       "Read(C:\\Users\\andre.darby\\Desktop\\Dev\\QuickJPG\\client\\src\\pages/**)",
-      "Bash(git init:*)"
+      "Bash(git init:*)",
+      "Bash(git commit:*)",
+      "Bash(git branch:*)",
+      "Bash(git push:*)",
+      "Bash(wrangler pages deploy:*)",
+      "Read(C:\\Users\\andre.darby\\Desktop\\Dev\\QuickJPG/**)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []
