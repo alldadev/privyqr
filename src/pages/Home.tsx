@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { Shield, Zap, FileSearch, Camera, Globe, Lock } from 'lucide-react';
+import Layout from '@/components/Layout';
 import DropZone from '@/components/scanner/DropZone';
 import WebcamScanner from '@/components/scanner/WebcamScanner';
 import ResultCard from '@/components/results/ResultCard';
@@ -72,40 +73,14 @@ export default function Home() {
   ];
 
   return (
-    <>
+    <Layout>
       <Helmet>
         <title>PrivyQR - Scan QR Codes Privately in Your Browser</title>
         <meta name="description" content="Scan QR codes from images, webcam, screenshots, and PDFs instantly in your browser. 100% private - no uploads required. Batch scan multiple QR codes free." />
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-b from-background to-secondary/20">
-        {/* Header */}
-        <header className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-          <div className="container mx-auto px-4 py-4">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                  <FileSearch className="w-6 h-6 text-primary-foreground" />
-                </div>
-                <h1 className="text-2xl font-bold gradient-text">PrivyQR</h1>
-              </div>
-              <nav className="hidden md:flex items-center gap-6">
-                <a href="/scan-from-image" className="text-sm hover:text-primary transition-colors">
-                  Scan from Image
-                </a>
-                <a href="/scan-from-screenshot" className="text-sm hover:text-primary transition-colors">
-                  Screenshot Scanner
-                </a>
-                <a href="/scan-from-pdf" className="text-sm hover:text-primary transition-colors">
-                  PDF Scanner
-                </a>
-              </nav>
-            </div>
-          </div>
-        </header>
-
-        {/* Hero Section */}
-        <section className="container mx-auto px-4 py-12">
+      {/* Hero Section */}
+      <section className="container mx-auto px-4 py-12">
           <div className="text-center mb-8">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Scan QR codes privately — <span className="gradient-text">right in your browser</span>
@@ -177,10 +152,10 @@ export default function Home() {
               </div>
             </div>
           )}
-        </section>
+      </section>
 
-        {/* How it Works */}
-        <section className="container mx-auto px-4 py-16 border-t">
+      {/* How it Works */}
+      <section className="container mx-auto px-4 py-16 border-t">
           <div className="max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold text-center mb-8">How it Works</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -213,20 +188,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
-
-        {/* Footer */}
-        <footer className="border-t bg-muted/50">
-          <div className="container mx-auto px-4 py-8">
-            <div className="text-center text-sm text-muted-foreground">
-              <p>© 2024 PrivyQR. All processing happens in your browser.</p>
-              <p className="mt-2">
-                Built with privacy in mind. No tracking, no cookies, no ads.
-              </p>
-            </div>
-          </div>
-        </footer>
-      </div>
+      </section>
 
       {/* Webcam Scanner Modal */}
       {showWebcam && (
@@ -235,6 +197,6 @@ export default function Home() {
           onClose={() => setShowWebcam(false)}
         />
       )}
-    </>
+    </Layout>
   );
 }
